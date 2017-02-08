@@ -1,0 +1,1431 @@
+<html>
+
+<head>
+<meta name=Title content="Using a NeCTAR Cloud Virtual Machine">
+<meta http-equiv=Content-Type content="text/html; charset=macintosh">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<title>Using a NeCTAR Cloud Virtual Machine</title>
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:"Courier New";
+	panose-1:2 7 3 9 2 2 5 2 4 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:Cambria;}
+h1
+	{margin-top:24.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	font-size:16.0pt;
+	font-family:Calibri;
+	color:#345A8A;}
+h2
+	{margin-top:10.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	font-size:16.0pt;
+	font-family:Calibri;
+	color:#4F81BD;}
+h3
+	{margin-top:10.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	font-size:14.0pt;
+	font-family:Calibri;
+	color:#4F81BD;}
+h4
+	{margin-top:10.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Calibri;
+	color:#4F81BD;}
+h5
+	{margin-top:10.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Calibri;
+	color:#4F81BD;
+	font-weight:normal;
+	font-style:italic;}
+h6
+	{margin-top:10.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Calibri;
+	color:#4F81BD;
+	font-weight:normal;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:Cambria;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:Cambria;
+	font-style:italic;}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:24.0pt;
+	margin-right:0cm;
+	margin-bottom:12.0pt;
+	margin-left:0cm;
+	text-align:center;
+	font-size:18.0pt;
+	font-family:Calibri;
+	color:#345A8A;
+	font-weight:bold;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin-top:9.0pt;
+	margin-right:0cm;
+	margin-bottom:9.0pt;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:Cambria;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:12.0pt;
+	margin-left:0cm;
+	text-align:center;
+	font-size:15.0pt;
+	font-family:Calibri;
+	color:#345A8A;
+	font-weight:bold;}
+p.MsoDate, li.MsoDate, div.MsoDate
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:Cambria;}
+p.MsoBlockText, li.MsoBlockText, div.MsoBlockText
+	{margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:0cm;
+	font-size:10.0pt;
+	font-family:Calibri;}
+a:link, span.MsoHyperlink
+	{color:#4F81BD;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:36.0pt;
+	font-size:12.0pt;
+	font-family:Cambria;}
+p.MsoBibliography, li.MsoBibliography, div.MsoBibliography
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:Cambria;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:16.0pt;
+	font-family:Calibri;
+	color:#365F91;}
+p.FirstParagraph, li.FirstParagraph, div.FirstParagraph
+	{margin-top:9.0pt;
+	margin-right:0cm;
+	margin-bottom:9.0pt;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:Cambria;}
+p.Compact, li.Compact, div.Compact
+	{margin-top:1.8pt;
+	margin-right:0cm;
+	margin-bottom:1.8pt;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:Cambria;}
+p.Author, li.Author, div.Author
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:Cambria;}
+p.Abstract, li.Abstract, div.Abstract
+	{margin-top:15.0pt;
+	margin-right:0cm;
+	margin-bottom:15.0pt;
+	margin-left:0cm;
+	font-size:10.0pt;
+	font-family:Cambria;}
+p.DefinitionTerm, li.DefinitionTerm, div.DefinitionTerm
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Cambria;
+	font-weight:bold;}
+p.Definition, li.Definition, div.Definition
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:Cambria;}
+p.TableCaption, li.TableCaption, div.TableCaption
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:Cambria;
+	font-style:italic;}
+p.ImageCaption, li.ImageCaption, div.ImageCaption
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:Cambria;
+	font-style:italic;}
+p.Figure, li.Figure, div.Figure
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:Cambria;}
+p.FigurewithCaption, li.FigurewithCaption, div.FigurewithCaption
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:Cambria;}
+span.VerbatimChar
+	{font-family:Consolas;}
+p.SourceCode, li.SourceCode, div.SourceCode
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	word-break:break-all;
+	font-size:12.0pt;
+	font-family:Consolas;}
+span.KeywordTok
+	{font-family:Consolas;
+	font-weight:bold;}
+span.DataTypeTok
+	{font-family:Consolas;
+	color:maroon;}
+span.DecValTok
+	{font-family:Consolas;
+	color:blue;}
+span.BaseNTok
+	{font-family:Consolas;
+	color:blue;}
+span.FloatTok
+	{font-family:Consolas;
+	color:purple;}
+span.ConstantTok
+	{font-family:Consolas;
+	color:black;}
+span.CharTok
+	{font-family:Consolas;
+	color:fuchsia;}
+span.SpecialCharTok
+	{font-family:Consolas;
+	color:fuchsia;}
+span.StringTok
+	{font-family:Consolas;
+	color:#DD0000;}
+span.VerbatimStringTok
+	{font-family:Consolas;
+	color:#DD0000;}
+span.SpecialStringTok
+	{font-family:Consolas;
+	color:#DD0000;}
+span.ImportTok
+	{font-family:Consolas;}
+span.CommentTok
+	{font-family:Consolas;
+	color:gray;
+	font-style:italic;}
+span.DocumentationTok
+	{font-family:Consolas;
+	color:gray;
+	font-style:italic;}
+span.AnnotationTok
+	{font-family:Consolas;
+	color:gray;
+	font-weight:bold;
+	font-style:italic;}
+span.CommentVarTok
+	{font-family:Consolas;
+	color:gray;
+	font-weight:bold;
+	font-style:italic;}
+span.OtherTok
+	{font-family:Consolas;}
+span.FunctionTok
+	{font-family:Consolas;
+	color:navy;}
+span.VariableTok
+	{font-family:Consolas;}
+span.ControlFlowTok
+	{font-family:Consolas;}
+span.OperatorTok
+	{font-family:Consolas;}
+span.BuiltInTok
+	{font-family:Consolas;}
+span.ExtensionTok
+	{font-family:Consolas;}
+span.PreprocessorTok
+	{font-family:Consolas;
+	font-weight:bold;}
+span.AttributeTok
+	{font-family:Consolas;}
+span.RegionMarkerTok
+	{font-family:Consolas;}
+span.InformationTok
+	{font-family:Consolas;
+	color:gray;
+	font-weight:bold;
+	font-style:italic;}
+span.WarningTok
+	{font-family:Consolas;
+	color:red;
+	font-weight:bold;}
+span.AlertTok
+	{font-family:Consolas;
+	color:lime;
+	font-weight:bold;}
+span.ErrorTok
+	{font-family:Consolas;
+	color:red;
+	font-weight:bold;}
+span.NormalTok
+	{font-family:Consolas;}
+.MsoChpDefault
+	{font-family:Cambria;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;}
+ /* Page Definitions */
+@page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:62.35pt 36.0pt 36.0pt 62.35pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-GB link="#4F81BD" vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoTitle><span lang=EN-US style='font-size:14.0pt'>Using a NeCTAR
+Cloud Virtual Machine</span></p>
+
+<h6 align=center style='text-align:center'><span lang=EN-US>February 2017</span></h6>
+
+<p class=FirstParagraph style='margin-bottom:6.0pt'><a
+name=using-a-nectar-cloud-virtual-machine></a><span lang=EN-US
+style='font-size:10.0pt'>This guide will show you how to <b>use</b> your NeCTAR
+VM to perform jobs, including tips on making efficient use of cloud
+capabilities.</span></p>
+
+<p class=MsoBodyText style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt'>This tutorial will
+demonstrate some basics of setting up and running a VM. We will install
+packages, download files, and run a demonstration analysis with some
+optimisation tips.</span></p>
+
+<p class=MsoBodyText style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt'>The aim of the
+workshop is to make using a NeCTAR cloud a less intimidating experience by
+walking through some of the common steps in running analyses on a VM.</span></p>
+
+<h2 align=center style='text-align:center'><a name=useful-links></a><span
+lang=EN-US style='font-size:10.0pt'>
+
+<hr size=2 width="100%" align=center>
+
+</span></h2>
+
+<h2 style='margin-left:24.0pt'><span lang=EN-US style='font-size:12.0pt'>Workshop
+Summary</span></h2>
+
+<p class=MsoBodyText style='margin-left:24.0pt'><span lang=EN-US>Launching an
+instance – standard instructions</span></p>
+
+<p class=Compact style='margin-left:72.0pt;text-indent:-24.0pt'><span
+lang=EN-US>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Log on to your project on the Nectar <b>Dashboard</b></span></p>
+
+<p class=Compact style='margin-left:72.0pt;text-indent:-24.0pt'><span
+lang=EN-US>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Create a <b>Security Group</b></span></p>
+
+<p class=Compact style='margin-left:72.0pt;text-indent:-24.0pt'><span
+lang=EN-US>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Create a <b>Key Pair</b></span></p>
+
+<p class=Compact style='margin-left:72.0pt;text-indent:-24.0pt'><span
+lang=EN-US>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Design and <b>Launch</b> your virtual machine
+(Instance)</span></p>
+
+<p class=Compact style='margin-left:72.0pt;text-indent:-24.0pt'><span
+lang=EN-US>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>SSH access</span></b><span lang=EN-US> to
+your VM using keypair authentication </span></p>
+
+<p class=MsoBodyText style='margin-left:24.0pt'><span lang=EN-US>Launching an
+instance with Remote Desktop</span></p>
+
+<p class=Compact style='margin-left:72.0pt;text-indent:-24.0pt'><span
+lang=EN-US>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Find the pre-configured <b>image</b> on the
+dashboard</span></p>
+
+<p class=Compact style='margin-left:72.0pt;text-indent:-24.0pt'><span
+lang=EN-US>7.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Launch</span></b><span lang=EN-US> the
+virtual machine</span></p>
+
+<p class=Compact style='margin-left:72.0pt;text-indent:-24.0pt'><span
+lang=EN-US>8.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Connect using <b>X2Go remote desktop</b></span></p>
+
+<p class=MsoBodyText style='margin-left:24.0pt'><span lang=EN-US>Running an
+example data analysis job </span></p>
+
+<p class=Compact style='margin-left:72.0pt;text-indent:-24.0pt'><span
+lang=EN-US>9.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Install software</span></b><span lang=EN-US>
+– package tool; download and unpack from the internet</span></p>
+
+<p class=Compact style='margin-left:72.0pt;text-indent:-24.0pt'><span
+lang=EN-US>10.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><b><span
+lang=EN-US>Transfer data</span></b><span lang=EN-US> – filezilla; sftp</span></p>
+
+<p class=Compact style='margin-left:72.0pt;text-indent:-24.0pt'><span
+lang=EN-US>11.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><b><span
+lang=EN-US>Nohup</span></b><span lang=EN-US> and parallel</span></p>
+
+<p class=Compact style='margin-left:72.0pt'><span lang=EN-US>&nbsp;</span></p>
+
+<div class=Compact align=center style='text-align:center'><span lang=EN-US
+style='font-size:10.0pt'>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<h2><span lang=EN-US style='font-size:12.0pt'>Useful Links</span></h2>
+
+<table class=MsoTable15Plain2 border=1 cellspacing=0 cellpadding=0 width="99%"
+ style='border-collapse:collapse;border:none'>
+ <tr style='height:14.15pt'>
+  <td width="29%" valign=top style='width:29.14%;border-top:solid #7F7F7F 1.0pt;
+  border-left:none;border-bottom:solid #7F7F7F 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt;height:14.15pt'>
+  <p class=Compact><b><span lang=EN-US style='font-size:8.0pt'>Nectar
+  self-paced training</span></b></p>
+  </td>
+  <td width="70%" valign=top style='width:70.86%;border-top:solid #7F7F7F 1.0pt;
+  border-left:none;border-bottom:solid #7F7F7F 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt;height:14.15pt'>
+  <p class=Compact><b><span lang=EN-US><a href="http://training.nectar.org.au/"><span
+  style='font-size:8.0pt;font-weight:normal'>http://training.nectar.org.au/</span></a></span></b></p>
+  </td>
+ </tr>
+ <tr style='height:13.4pt'>
+  <td width="29%" valign=top style='width:29.14%;border:none;border-bottom:
+  solid #7F7F7F 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:13.4pt'>
+  <p class=Compact><b><span lang=EN-US style='font-size:8.0pt'>eHelp support
+  page</span></b></p>
+  </td>
+  <td width="70%" valign=top style='width:70.86%;border:none;border-bottom:
+  solid #7F7F7F 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:13.4pt'>
+  <p class=Compact><span lang=EN-US><a href="https://support.ehelp.edu.au/"><span
+  style='font-size:8.0pt'>https://support.ehelp.edu.au/</span></a></span></p>
+  </td>
+ </tr>
+ <tr style='height:14.15pt'>
+  <td width="29%" valign=top style='width:29.14%;border:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:14.15pt'>
+  <p class=Compact><b><span lang=EN-US style='font-size:8.0pt'>Nectar user
+  guides</span></b></p>
+  </td>
+  <td width="70%" valign=top style='width:70.86%;border:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:14.15pt'>
+  <p class=Compact><span lang=EN-US><a
+  href="https://support.ehelp.edu.au/support/solutions/folders/6000190150"><span
+  style='font-size:8.0pt'>https://support.ehelp.edu.au/support/solutions/folders/6000190150</span></a></span></p>
+  </td>
+ </tr>
+ <tr style='height:13.4pt'>
+  <td width="29%" valign=top style='width:29.14%;border-top:solid #7F7F7F 1.0pt;
+  border-left:none;border-bottom:solid #7F7F7F 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.4pt'>
+  <p class=Compact><b><span lang=EN-US style='font-size:8.0pt'>Unix Tutorial</span></b></p>
+  </td>
+  <td width="70%" valign=top style='width:70.86%;border-top:solid #7F7F7F 1.0pt;
+  border-left:none;border-bottom:solid #7F7F7F 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.4pt'>
+  <p class=Compact><span lang=EN-US><a
+  href="https://www.codecademy.com/learn/learn-the-command-line"><span
+  style='font-size:8.0pt'>https://www.codecademy.com/learn/learn-the-command-line</span></a></span></p>
+  </td>
+ </tr>
+ <tr style='height:14.15pt'>
+  <td width="29%" valign=top style='width:29.14%;border:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:14.15pt'>
+  <p class=Compact><b><span lang=EN-US style='font-size:8.0pt'>Unix Quick
+  Reference</span></b></p>
+  </td>
+  <td width="70%" valign=top style='width:70.86%;border:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:14.15pt'>
+  <p class=Compact><span lang=EN-US><a
+  href="https://files.fosswire.com/2007/08/fwunixref.pdf"><span
+  style='font-size:8.0pt'>https://files.fosswire.com/2007/08/fwunixref.pdf</span></a></span></p>
+  </td>
+ </tr>
+ <tr style='height:13.4pt'>
+  <td width="29%" valign=top style='width:29.14%;border-top:solid #7F7F7F 1.0pt;
+  border-left:none;border-bottom:solid #7F7F7F 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.4pt'>
+  <p class=Compact><b><span lang=EN-US style='font-size:8.0pt'>Unix Cheat Sheet</span></b></p>
+  </td>
+  <td width="70%" valign=top style='width:70.86%;border-top:solid #7F7F7F 1.0pt;
+  border-left:none;border-bottom:solid #7F7F7F 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.4pt'>
+  <p class=Compact><span lang=EN-US><a
+  href="http://www.cs.jhu.edu/~joanne/unixRC.pdf"><span style='font-size:8.0pt'>http://www.cs.jhu.edu/~joanne/unixRC.pdf</span></a></span></p>
+  </td>
+ </tr>
+ <tr style='height:14.15pt'>
+  <td width="29%" valign=top style='width:29.14%;border:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:14.15pt'>
+  <p class=Compact><b><span lang=EN-US style='font-size:8.0pt'>Remote Desktop
+  training</span></b></p>
+  </td>
+  <td width="70%" valign=top style='width:70.86%;border:none;padding:0cm 5.4pt 0cm 5.4pt;
+  height:14.15pt'>
+  <p class=Compact><span lang=EN-US><a
+  href="http://training.nectar.org.au/package07/sections/remoteDesktop.html"><span
+  style='font-size:8.0pt'>http://training.nectar.org.au/package07/sections/remoteDesktop.html</span></a></span></p>
+  </td>
+ </tr>
+ <tr style='height:16.0pt'>
+  <td width="29%" valign=top style='width:29.14%;border-top:solid #7F7F7F 1.0pt;
+  border-left:none;border-bottom:solid #7F7F7F 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
+  <p class=Compact><b><span lang=EN-US style='font-size:8.0pt'>Remote Desktop
+  Image</span></b></p>
+  </td>
+  <td width="70%" valign=top style='width:70.86%;border-top:solid #7F7F7F 1.0pt;
+  border-left:none;border-bottom:solid #7F7F7F 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
+  <p class=Compact><span lang=EN-US><a
+  href="https://support.ehelp.edu.au/support/solutions/articles/6000090909-tpac-remote-desktop"><span
+  style='font-size:8.0pt'>https://support.ehelp.edu.au/support/solutions/articles/6000090909-tpac-remote-desktop</span></a></span></p>
+  </td>
+ </tr>
+ <tr style='height:16.0pt'>
+  <td width="29%" valign=top style='width:29.14%;border:none;border-bottom:
+  solid #7F7F7F 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
+  <p class=Compact><b><span lang=EN-US style='font-size:8.0pt'>eRSA Helpdesk</span></b></p>
+  </td>
+  <td width="70%" valign=top style='width:70.86%;border:none;border-bottom:
+  solid #7F7F7F 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
+  <p class=Compact><span lang=EN-US><a href="https://www.ersa.edu.au/support/"><span
+  style='font-size:8.0pt'>https://www.ersa.edu.au/support/</span></a></span></p>
+  </td>
+ </tr>
+</table>
+
+<h2><a name=launch-a-virtual-machine-instance></a><span lang=EN-US
+style='font-size:12.0pt'>Launch a Virtual Machine (Instance)</span></h2>
+
+<p class=FirstParagraph><span lang=EN-US style='font-size:10.0pt'>This tutorial
+will provide an overview of launching and accessing a virtual machine (VM) in
+NeCTAR. These processes are covered in depth on the NeCTAR website Training
+Modules </span><span lang=EN-US><a href="http://training.nectar.org.au/"><span
+style='font-size:10.0pt'>http://training.nectar.org.au/</span></a></span><span
+lang=EN-US style='font-size:10.0pt'> , and Support Pages </span><span
+lang=EN-US><a href="https://support.ehelp.edu.au/support/solutions"><span
+style='font-size:10.0pt'>https://support.ehelp.edu.au/support/solutions</span></a></span></p>
+
+<p class=MsoBodyText><span lang=EN-US style='font-size:11.0pt'>Instructions in <span
+style='background:lightgrey'>&lt;arrows&gt;</span> should be replaced. </span><span
+lang=EN-US style='font-size:9.0pt'>(e.g</span><span lang=EN-US
+style='font-size:11.0pt'>. </span><span class=VerbatimChar><span lang=EN-US
+style='font-size:8.0pt;background:lightgrey'>&lt;path/to/key&gt;</span></span><span
+class=VerbatimChar><span lang=EN-US style='font-size:8.0pt'> </span></span><span
+class=VerbatimChar><span lang=EN-US style='font-size:8.0pt;font-family:Cambria'>may
+be replaced with</span></span><span class=VerbatimChar><span lang=EN-US
+style='font-size:8.0pt'> <span style='background:lightgrey'>&nbsp;~/.ssh/key.pem
+</span></span></span><span class=VerbatimChar><span lang=EN-US
+style='font-size:8.0pt;font-family:Cambria'>)</span></span></p>
+
+<p class=MsoBodyText><span lang=EN-US style='font-size:11.0pt'>&nbsp;</span></p>
+
+<p class=Compact style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Log on to the NeCTAR
+dashboard </span><span lang=EN-US><a
+href="https://dashboard.rc.nectar.org.au/project"><span style='font-size:10.0pt'>https://dashboard.rc.nectar.org.au/project</span></a></span></p>
+
+<p class=Compact style='margin-left:24.0pt'><span lang=EN-US style='font-size:
+10.0pt'>Select the correct project allocation in the top bar (if it starts with
+&quot;pt- &quot;, it is your default trial allocation)</span></p>
+
+<p class=Compact style='margin-left:24.0pt'><span lang=EN-US style='font-size:
+10.0pt'>&nbsp;</span></p>
+
+<p class=Compact style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Select &quot;<b>Access
+&amp; Security</b>&quot; under the &quot;Compute&quot; subheading in the left
+side main menu.</span></p>
+
+<p class=Compact style='margin-left:54.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:10.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Navigate to “Security Groups”
+and click &quot;Create Security Group&quot;</span></p>
+
+<p class=Compact style='margin-left:54.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:10.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Name the security group
+'SSH', with the description &quot;port 22 for SSH&quot;. Click &quot;Create
+Security Group&quot;</span></p>
+
+<p class=Compact style='margin-left:54.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:10.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Click &quot;<b>Manage
+Rules</b>&quot; in the &quot;Actions&quot; drop-down menu. Click &quot;<b>Add
+Rule</b>&quot;.</span></p>
+
+<p class=Compact style='margin-left:54.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:10.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Type &quot;22&quot;
+under &quot;<b>Port</b>&quot;. Click “Add”</span></p>
+
+<p class=Compact style='margin-left:60.0pt'><span lang=EN-US style='font-size:
+10.0pt'>&nbsp;</span></p>
+
+<p class=Compact style='margin-left:72.0pt'><i><span lang=EN-US
+style='font-size:10.0pt;color:#7F7F7F'>Optional:</span></i><span lang=EN-US
+style='font-size:10.0pt;color:#7F7F7F'> Under &quot;<b>CIDR</b>&quot;, you can choose
+a range of IP adresses that can access your VM through port 22. If you keep it
+as &quot;0.0.0.0/0&quot;, you can access your VM from any computer, but others
+might find a way to access it also. Here are the IP ranges for SA University
+networks. Use one of these, and the VM can only be accessed form a University
+computer (including an external computer using a VPN to access the University
+network).</span></p>
+
+<p class=Compact style='margin-left:96.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt;color:#7F7F7F'>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;color:#7F7F7F'>129.127.0.0/16
+- University of Adelaide</span></p>
+
+<p class=Compact style='margin-left:96.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt;color:#7F7F7F'>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;color:#7F7F7F'>129.96.0.0/16
+- Flinders</span></p>
+
+<p class=Compact style='margin-left:96.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt;color:#7F7F7F'>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;color:#7F7F7F'>130.220.0.0/16
+– UniSA</span></p>
+
+<p class=Compact style='margin-left:72.0pt'><span lang=EN-US style='font-size:
+10.0pt'>&nbsp;</span></p>
+
+<p class=Compact style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Select “Access and
+Security”, then the &quot;<b>Key Pairs</b>&quot; tab.</span></p>
+
+<p class=Compact style='margin-left:60.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>a)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Click “<b>Create Key
+Pair</b>”, name it and observe that a ___.pem file is automatically downloaded.</span></p>
+
+<p class=Compact style='margin-left:60.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>b)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Save the private key
+(.pem file) &nbsp;to your computer in a place you can easily find again.</span></p>
+
+<p class=Compact style='margin-left:78.0pt;text-indent:-18.0pt'><span
+class=VerbatimChar><span lang=EN-US style='font-size:9.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span
+lang=EN-US style='font-size:10.0pt'>MacOS users: enter the following in your
+Terminal app : </span><span class=VerbatimChar><span lang=EN-US
+style='font-size:9.0pt;background:lightgrey'>chmod 600 &lt;path/to/key&gt;</span></span></p>
+
+<p class=Compact style='margin-left:78.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:10.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Windows users use
+Puttygen to convert key to ___.ppk file (see demo instructions)</span></p>
+
+<p class=Compact style='margin-left:36.0pt'><span lang=EN-US style='font-size:
+10.0pt'>See </span><span lang=EN-US><a
+href="https://support.ehelp.edu.au/support/solutions/articles/6000055376-launching-virtual-machines"><span
+style='font-size:10.0pt'>launching-virtual-machines</span></a></span><span
+lang=EN-US style='font-size:10.0pt'> for more instructions on setting up
+keypairs. </span></p>
+
+<p class=Compact style='margin-left:24.0pt'><span lang=EN-US style='font-size:
+10.0pt'>&nbsp;</span></p>
+
+<p class=Compact style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Select &quot;<b>Instances</b>&quot;
+in the left side main menu. Click &quot;<b>Launch Instance</b>&quot;.</span></p>
+
+<p class=Compact style='margin-left:60.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>a)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Give your VM a name,
+choose a &quot;<b>Flavor</b>&quot; (size of the VM), and select an Image
+(pre-loaded operating system, e.g. NeCTAR Ubuntu 16.04).</span></p>
+
+<p class=Compact style='margin-left:60.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>b)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Select the &quot;<b>Access
+&amp; Security</b>&quot; tab. Select your Key Pair name, and selec</span></p>
+
+<p class=Compact style='margin-left:60.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>c)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>t the &quot;<b>SSH</b>&quot;
+security group.</span></p>
+
+<p class=Compact style='margin-left:60.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>d)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Click &quot;<b>Launch</b>&quot;.
+It may take a few minutes for the instance to boot.</span></p>
+
+<span lang=EN-US style='font-size:12.0pt;font-family:Cambria'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><a name=connect-to-your-vm></a><b><span lang=EN-US
+style='font-family:Calibri;color:#4F81BD'>&nbsp;</span></b></p>
+
+<h2><span lang=EN-US style='font-size:12.0pt'>Connect to your VM</span></h2>
+
+<p class=FirstParagraph><span lang=EN-US style='font-size:10.0pt'>For full instructions,
+see the support page </span><span lang=EN-US><a
+href="https://support.ehelp.edu.au/support/solutions/articles/6000055446-accessing-instances"><span
+style='font-size:10.0pt'>accessing-instances</span></a></span></p>
+
+<p class=MsoBodyText><span lang=EN-US style='font-size:10.0pt'>Copy the IP
+Address of the instance you have created (found in the “Instances” tab on the
+dashboard).</span></p>
+
+<p class=MsoBodyText style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:10.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Windows - Set up a
+PuTTY connection with the IP address and the username “ubuntu” </span></p>
+
+<p class=MsoBodyText style='margin-left:36.0pt;text-indent:-18.0pt'><span
+class=VerbatimChar><span lang=EN-US style='font-size:10.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span
+lang=EN-US style='font-size:10.0pt'>Mac/Linux - In the Terminal app, enter </span><span
+class=VerbatimChar><span lang=EN-US style='font-size:9.0pt;background:lightgrey'>ssh
+-i &lt;Path/to/key&gt; ubuntu@&lt;IPaddress&gt;</span></span></p>
+
+<p class=MsoBodyText style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:10.0pt'>&nbsp;</span></p>
+
+<p class=MsoBodyText style='margin-left:18.0pt'><span lang=EN-US
+style='font-size:10.0pt'>&nbsp;</span></p>
+
+<h2><a name=getting-acquainted-with-the-vm></a><span lang=EN-US
+style='font-size:12.0pt'>Getting acquainted with the VM</span></h2>
+
+<p class=Compact style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Try some commands to
+look around the VM</span></p>
+
+<p class=SourceCode style='margin-left:36.0pt'><span lang=EN-US
+style='font-size:10.0pt;background:lightgrey'>lsblk </span></p>
+
+<p class=SourceCode style='margin-left:36.0pt'><span lang=EN-US
+style='font-size:10.0pt;background:lightgrey'>&nbsp;df -hT </span></p>
+
+<p class=SourceCode style='margin-left:36.0pt'><span lang=EN-US
+style='font-size:10.0pt;background:lightgrey'>&nbsp;ps </span></p>
+
+<p class=SourceCode style='margin-left:36.0pt'><span lang=EN-US
+style='font-size:10.0pt;background:lightgrey'>&nbsp;top</span></p>
+
+<p class=Compact style='margin-left:24.0pt;text-indent:-24.0pt'><span
+class=MsoHyperlink><span lang=EN-US style='font-size:10.0pt;color:windowtext'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span lang=EN-US style='font-size:10.0pt'>Connect to the
+VM with <b>FileZilla </b>to visualise the file structure and contents.<br>
+</span><span lang=EN-US><a
+href="https://support.ehelp.edu.au/support/solutions/articles/6000085114-transferring-data-to-your-vm#_filezilla_1"><span
+style='font-size:10.0pt'>transferring-data-to-your-vm#filezilla</span></a></span></p>
+
+<p class=Compact style='margin-left:24.0pt'><span class=MsoHyperlink><span
+lang=EN-US style='font-size:10.0pt;color:windowtext'>&nbsp;</span></span></p>
+
+<p class=Compact style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Install &quot;<b>htop</b>&quot;
+using Ubuntu's &quot;Advanced Package Tool (apt)&quot;</span></p>
+
+<p class=Compact style='margin-left:60.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>–<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span class=VerbatimChar><span lang=EN-US style='font-size:9.0pt;
+background:lightgrey'>apt-cache search htop</span></span></p>
+
+<p class=Compact style='margin-left:60.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>–<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span class=VerbatimChar><span lang=EN-US style='font-size:9.0pt;
+background:lightgrey'>sudo apt-get install htop</span></span></p>
+
+<p class=Compact style='margin-left:60.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>–<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span class=VerbatimChar><span lang=EN-US style='font-size:9.0pt;
+background:lightgrey'>htop</span></span></p>
+
+<p class=Compact style='margin-left:24.0pt'><span lang=EN-US style='font-size:
+10.0pt'>&nbsp;</span></p>
+
+<h2><a name=some-handy-commands-to-run-the-first-tim></a><span lang=EN-US
+style='font-size:12.0pt'>&nbsp;</span></h2>
+
+<h2><span lang=EN-US style='font-size:12.0pt'>Some commands to run the first
+time you access your VM</span></h2>
+
+<p class=Compact style='margin-left:24.0pt'><span class=VerbatimChar><span
+lang=EN-US style='font-size:9.0pt;background:lightgrey'>sudo passwd ubuntu</span></span><span
+lang=EN-US style='font-size:10.0pt'> - Set a password for the user
+&quot;ubuntu&quot; (tip: the password is typed invisibly)<br>
+<br>
+</span></p>
+
+<p class=MsoNormal style='margin-left:24.0pt'><span class=VerbatimChar><span
+lang=EN-US style='font-size:9.0pt;background:lightgrey'>sudo chown ubuntu /mnt</span></span><span
+lang=EN-US style='font-size:10.0pt'> - Make user &quot;ubuntu&quot; the owner
+of the mounted storage in /mnt (Only if you have launched a flavor that has
+&quot;Ephemeral Disk&quot; storage). Without this command, you cannot save data
+to the larger storage disk.</span></p>
+
+<p class=Compact style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Run the following
+commands periodically to update the package manager and the installed packages.
+We won't run them today because they can be time-consuming.</span></p>
+
+<p class=Compact style='margin-left:24.0pt'><span class=VerbatimChar><span
+lang=EN-US style='font-size:9.0pt;background:lightgrey'>sudo apt-get update</span></span></p>
+
+<p class=MsoNormal style='margin-left:24.0pt'><span class=VerbatimChar><span
+lang=EN-US style='font-size:9.0pt;background:lightgrey'>sudo apt-get upgrade</span></span></p>
+
+<div class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:10.0pt'>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=MsoNormal><a name=launching-a-remote-desktop-instance></a><span
+lang=EN-US>To close the SSH session, enter the command </span><span
+class=VerbatimChar><span lang=EN-US style='font-size:11.0pt;background:lightgrey'>exit</span></span><span
+lang=EN-US><br clear=all style='page-break-before:always'>
+</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Launching a Remote Desktop Instance</span></p>
+
+<p class=FirstParagraph><span lang=EN-US style='font-size:10.0pt'>By installing
+some programs on the VM and your PC, we can create a GUI virtual desktop to
+interact with the VM. We will launch an instance with an image that is already
+set-up with X2Go server and Mate pre-installed. If the X2Go client is already
+installed on your PC, you are ready to launch a remote destop VM.</span></p>
+
+<p class=MsoBodyText><span lang=EN-US><a
+href="http://wiki.x2go.org/doku.php/doc:newtox2go"><span style='font-size:10.0pt'>X2Go
+website</span></a></span><span class=MsoHyperlink><span lang=EN-US
+style='font-size:10.0pt'> </span></span><span class=MsoHyperlink><span
+lang=EN-US style='font-size:10.0pt;color:black'>;</span></span><span
+lang=EN-US style='font-size:10.0pt'> </span><span lang=EN-US><a
+href="http://wiki.x2go.org/doku.php/doc:installation:x2goclient"><span
+style='font-size:10.0pt'>Installing the X2Go client</span></a></span><span
+lang=EN-US style='font-size:10.0pt'> *NB MacOSX users will need to install
+XQuartz first if they don't have X11 server installed.</span></p>
+
+<p class=MsoBodyText><b><u><span lang=EN-US style='font-size:10.0pt'><span
+ style='text-decoration:none'>&nbsp;</span></span></u></b></p>
+
+<p class=MsoBodyText><b><u><span lang=EN-US style='font-size:10.0pt'>Dashboard
+– Launching an instance form a pre-configured image</span></u></b></p>
+
+<p class=Compact style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>On the Nectar
+Dashboard, select the <b>Images</b> tab, then select <b>Public</b>.</span></p>
+
+<p class=Compact style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Click on the column
+header <b>Image Name</b> so the column is alphabetised</span></p>
+
+<p class=Compact style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Find the image named <b>TPAC
+core.0XX XXXXXXXXXX </b>and select <b>Launch Instance</b></span></p>
+
+<p class=Compact style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Give the instance a
+name and choose a suitable Flavor (m2.small suggested for the tutorial)</span></p>
+
+<p class=Compact style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Under <b>Access and
+Security</b> select the keypair and security group you set up earlier.</span></p>
+
+<p class=MsoNormal style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Launch Instance</span></p>
+
+<p class=MsoNormal><b><u><span lang=EN-US style='font-size:10.0pt'><span
+ style='text-decoration:none'>&nbsp;</span></span></u></b></p>
+
+<p class=MsoNormal><b><u><span lang=EN-US style='font-size:10.0pt'>X2GO –
+Connect to the instance with a remote desktop</span></u></b></p>
+
+<p class=Compact style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>7.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Open the X2Go client.
+Click <b>Session</b>, then <b>New Session</b>.</span></p>
+
+<p class=Compact style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>8.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Choose a session name.</span></p>
+
+<p class=Compact style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>9.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Copy and paste the IP
+address of the instance for <b>Host</b>. Login is &quot;ubuntu&quot;</span></p>
+
+<p class=Compact style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>10.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Browse for the key you
+saved (.pem) for ssh connection.</span></p>
+
+<p class=Compact style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>11.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Under <b>Session Type</b>,
+select &quot;MATE&quot;</span></p>
+
+<p class=Compact style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>12.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Select the <b>Shared
+folders</b> tab at the top of the window.</span></p>
+
+<p class=Compact style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>13.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Browse for a folder on
+your PC that you can share with the VM. Select <b>Add</b> and click <b>Automount</b>.</span></p>
+
+<p class=Compact style='margin-left:54.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-size:9.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:9.0pt'>MacOS – you might need
+to go to your computer’s “system preferences / sharing” and select file sharing</span></p>
+
+<p class=Compact style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>14.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Ensure &quot;use SSH
+port forwarding...&quot; is selected and click <b>OK</b>.</span></p>
+
+<p class=MsoNormal style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>15.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Select the session in
+your X2Go client main window and it will connect.</span></p>
+
+<p class=FirstParagraph><span lang=EN-US style='font-size:10.0pt'>&nbsp;</span></p>
+
+<p class=FirstParagraph><span lang=EN-US style='font-size:10.0pt'>Look around
+the remote desktop environment. Your shared folder will be in &quot;ubuntu
+(home) / media / disk /&quot;. Right click and &quot;make a link&quot; that you
+can put in your Ubuntu (home) folder.</span></p>
+
+<p class=MsoBodyText><span lang=EN-US style='font-size:10.0pt'>In the top left,
+click &quot;Applications&quot;, then &quot;System Tools&quot; and select <b>MATE
+Terminal</b>. This is the command-line interface within the remote desktop
+session.</span></p>
+
+<p class=MsoBodyText><span lang=EN-US style='font-size:10.0pt'>The following
+instructions will be used identically whether via SSH connection through your
+PC's terminal or PuTTY application, or through the Mate Terminal application in
+your remote desktop session.</span></p>
+
+<p class=MsoBodyText><span lang=EN-US style='font-size:10.0pt'>However, some
+commands could be replaced with &quot;point-and-click&quot; processes in your
+remote desktop session. E.g. downloading program files using the FireFox web
+browser rather than the </span><span class=VerbatimChar><span lang=EN-US
+style='font-size:9.0pt;background:lightgrey'>wget</span></span><span
+lang=EN-US style='font-size:10.0pt'> command; copying and pasting.</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.0pt'>&nbsp;</span></p>
+
+<span lang=EN-US style='font-size:12.0pt;font-family:Cambria'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><a name=running-an-example-data-analysis-job></a><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Running an example data analysis job</span></p>
+
+<p class=FirstParagraph><span lang=EN-US style='font-size:10.0pt'>We will be
+running a job with the population genetic program &quot;Structure&quot;. This
+program is a good example of an &quot;embarrassingly parallel problem&quot;
+that is ideal for running on a cloud VM with a large number of processors.</span></p>
+
+<h3><a name=downloading-and-decompressing-files></a><span lang=EN-US
+style='font-size:11.0pt'>Downloading and decompressing files</span></h3>
+
+<p class=MsoNormal style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>To download
+&quot;Structure&quot;, copy the URL for the latest release </span><span
+lang=EN-US><a
+href="http://pritchardlab.stanford.edu/structure_software/release_versions/"><span
+style='font-size:10.0pt'>http://pritchardlab.stanford.edu/structure_software/release_versions/</span></a></span></p>
+
+<p class=MsoNormal style='margin-left:24.0pt;text-indent:-24.0pt'><span
+class=VerbatimChar><span lang=EN-US style='font-size:10.0pt;font-family:Cambria'>•<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span lang=EN-US style='font-size:10.0pt'>Then use the
+&quot;wget&quot; command to download the tar.gz file. e.g.<br>
+</span><span class=VerbatimChar><span lang=EN-US style='font-size:9.0pt;
+background:lightgrey'>wget <a
+href="http://pritchardlab.stanford.edu/structure_software/release_versions%20/v2.3.4/release/structure_linux_console.tar.gz">http://pritchardlab.stanford.edu/structure_software/release_versions
+/v2.3.4/release/structure_linux_console.tar.gz</a></span></span></p>
+
+<p class=MsoNormal style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Decompress the archived
+folder with:<br>
+</span><span class=VerbatimChar><span lang=EN-US style='font-size:9.0pt;
+background:lightgrey'>tar -zxvf structure_linux_console.tar.gz</span></span><span
+lang=EN-US style='font-size:10.0pt'> </span></p>
+
+<p class=MsoNormal style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Download today's
+tutorial file:<br>
+</span><span class=VerbatimChar><span lang=EN-US style='font-size:9.0pt;
+background:lightgrey'>wget
+https://github.com/joeygerlach/structure_parallel/archive/master.zip</span></span></p>
+
+<p class=MsoNormal style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Use the <i>unzip</i>
+command to decompress the tutorial file<br>
+</span><span class=VerbatimChar><span lang=EN-US style='font-size:9.0pt;
+background:lightgrey'>sudo apt-get install zip unzip</span></span><span
+lang=EN-US style='font-size:10.0pt'><br>
+</span><span class=VerbatimChar><span lang=EN-US style='font-size:9.0pt;
+background:lightgrey'>unzip master.zip</span></span></p>
+
+<h3><a name=moving-the-analysis-to-the-mounted-stora></a><span lang=EN-US
+style='font-size:11.0pt'>Moving the analysis to the mounted storage
+&quot;/mnt&quot;</span></h3>
+
+<p class=FirstParagraph><span lang=EN-US style='font-size:10.0pt'>Always
+perform analyses in a larger storage disc, not the primary (root) disc. In this
+tutorial we will use the secondary (ephemeral) disc, but some users may request
+volume storage to use for running analyses instead because the data will be
+more secure.</span></p>
+
+<p class=MsoNormal style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>First, we make the
+mounted storage disc writable:<br>
+</span><span class=VerbatimChar><span lang=EN-US style='font-size:9.0pt;
+background:lightgrey'>sudo chown ubuntu /mnt</span></span></p>
+
+<p class=MsoNormal style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Copy the tutorial files
+to the mounted disc:<br>
+</span><span class=VerbatimChar><span lang=EN-US style='font-size:9.0pt;
+background:lightgrey'>cp -r ~/structure_parallel-master/ /mnt/structure_run1/</span></span><span
+lang=EN-US style='font-size:10.0pt'><br>
+</span><span class=VerbatimChar><span lang=EN-US style='font-size:9.0pt;
+background:lightgrey'>cd /mnt/structure_run1</span></span></p>
+
+<p class=MsoNormal style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Look at the files (you
+may wish to use FileZilla for this)<br>
+</span><span class=VerbatimChar><span lang=EN-US style='font-size:9.0pt;
+background:lightgrey'>ls -lh</span></span></p>
+
+<h2><a name=running-the-program---using-parallel-and></a><span lang=EN-US
+style='font-size:12.0pt'>Running the program - using &quot;Parallel&quot; and
+&quot;nohup&quot;</span></h2>
+
+<p class=MsoBodyText><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Look at the support
+page on running jobs on a VM:<br>
+</span><span lang=EN-US><a
+href="https://support.nectar.org.au/support/solutions/articles/6000089713-tips-for-running-jobs-on-your-vm"><span
+style='font-size:10.0pt'>https://support.nectar.org.au/support/solutions/articles/6000089713-tips-for-running-jobs-on-your-vm</span></a></span></p>
+
+<p class=MsoNormal style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Install the task
+manager &quot;GNU Parallel&quot;<br>
+</span><span class=VerbatimChar><span lang=EN-US style='font-size:9.0pt;
+background:lightgrey'>sudo apt-get install parallel</span></span></p>
+
+<p class=MsoNormal style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Run Structure using
+&quot;GNU parallel&quot; to split the jobs amongst the available CPUs:<br>
+</span><span class=VerbatimChar><span lang=EN-US style='font-size:9.0pt;
+background:lightgrey'>parallel &lt; example_commands.txt</span></span></p>
+
+<p class=MsoNormal style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>Look at </span><span
+class=VerbatimChar><span lang=EN-US style='font-size:9.0pt;background:lightgrey'>top</span></span><span
+lang=EN-US style='font-size:10.0pt'>, </span><span class=VerbatimChar><span
+lang=EN-US style='font-size:9.0pt;background:lightgrey'>htop</span></span><span
+lang=EN-US style='font-size:10.0pt'> or the System Monitor to see the job
+running.</span></p>
+
+<p class=MsoNormal style='margin-left:24.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-size:10.0pt'>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt'>When you close the
+terminal (or PuTTY) window, the job will be terminated. In order to keep the
+process running after we have logged out, we add </span><span
+class=VerbatimChar><span lang=EN-US style='font-size:9.0pt;background:lightgrey'>nohup</span></span><span
+lang=EN-US style='font-size:10.0pt'> to the command. </span><span
+class=VerbatimChar><span lang=EN-US style='font-size:9.0pt;background:lightgrey'>nohup
+parallel &lt; example_commands.txt 2&gt;&amp;1 &amp;</span></span><a
+name=transferring-files></a></p>
+
+<span lang=EN-US style='font-size:12.0pt;font-family:Cambria'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><b><span lang=EN-US style='font-family:Calibri;color:#4F81BD'>&nbsp;</span></b></p>
+
+<h2><span lang=EN-US style='font-size:12.0pt'>Transferring files</span></h2>
+
+<p class=FirstParagraph style='margin-bottom:0cm;margin-bottom:.0001pt'><span
+lang=EN-US style='font-size:10.0pt'>We have created a folder of results files.
+We will transfer them to your computer, or to a remote data storage server.</span></p>
+
+<p class=MsoBodyText><span lang=EN-US style='font-size:10.0pt'>First, we can
+zip the results folder into a single file.<br>
+</span><span class=VerbatimChar><span lang=EN-US style='font-size:9.0pt;
+background:lightgrey'>zip structure_1.zip results</span></span><span
+lang=EN-US style='font-size:10.0pt'> OR<br>
+</span><span class=VerbatimChar><span lang=EN-US style='font-size:9.0pt;
+background:lightgrey'>tar -zcvf structure_1.tar.gz results/</span></span></p>
+
+<h3><a name=filezilla></a><a name="_filezilla_1"></a><span lang=EN-US
+style='font-size:11.0pt'>Filezilla</span></h3>
+
+<p class=FirstParagraph><span lang=EN-US style='font-size:10.0pt'>Drag and drop
+files between your VM and your local computer.</span></p>
+
+<h3><a name=secure-file-transfer-protocol></a><span lang=EN-US
+style='font-size:11.0pt'>Secure File Transfer Protocol</span></h3>
+
+<p class=FirstParagraph style='margin-bottom:0cm;margin-bottom:.0001pt'><span
+lang=EN-US style='font-size:10.0pt'>Use the <b>sftp</b> command to access a
+remote computer, then use &quot;get&quot; to download or &quot;put&quot; to
+upload files.</span></p>
+
+<p class=MsoBodyText><span lang=EN-US style='font-size:10.0pt'>As an example,
+if you have storage at eRSA you may use:</span></p>
+
+<p class=MsoBodyText><span class=VerbatimChar><span lang=EN-US
+style='font-size:9.0pt;background:lightgrey'>sftp
+&lt;username&gt;@sftp.ersa.edu.au</span></span><span lang=EN-US
+style='font-size:10.0pt'><br>
+</span><span class=VerbatimChar><span lang=EN-US style='font-size:9.0pt;
+background:lightgrey'>get test.txt ./</span></span><span lang=EN-US
+style='font-size:10.0pt'><br>
+</span><span class=VerbatimChar><span lang=EN-US style='font-size:9.0pt;
+background:lightgrey'>put test.tar.gz ./</span></span><span lang=EN-US
+style='font-size:10.0pt'><br>
+</span><span class=VerbatimChar><span lang=EN-US style='font-size:9.0pt;
+background:lightgrey'>quit</span></span></p>
+
+<h3><a name=terminating-instances></a><span lang=EN-US style='font-size:11.0pt'>Terminating
+Instances</span></h3>
+
+<p class=FirstParagraph style='margin-bottom:0cm;margin-bottom:.0001pt'><span
+lang=EN-US style='font-size:10.0pt'>Remember to terminate instances when they
+are no longer being used. This can be done in the &quot;Instances&quot; tab of
+the Nectar dashboard. Remember to save any data to a secure data storage
+location first. You may choose to create a &quot;snapshot&quot; of the instance
+before terminating it, in case you need to revisit the compute environment for
+future analyses.</span></p>
+
+<div class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:10.0pt'>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<h2><a name=quick-reference-for-shell-commands></a><span lang=EN-US
+style='font-size:14.0pt;color:#8EB4E3'><span style='color:windowtext'>Quick
+reference for shell commands</span></span></h2>
+
+<p class=FirstParagraph><span lang=EN-US style='font-size:10.0pt'>Connecting
+from the terminal app on your Mac:<br>
+</span><span class=VerbatimChar><span lang=EN-US style='font-size:9.0pt;
+background:lightgrey'>ssh -i &lt;Path/to/Nectar_Key&gt; ubuntu@XX.XX.XX.XX</span></span></p>
+
+<h3><a name=commands-for-your-linux-vm></a><span lang=EN-US style='font-size:
+11.0pt'>Commands for your Linux VM</span></h3>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td width="41%" valign=bottom style='width:41.4%;border:none;border-bottom:
+  solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=Compact><span lang=EN-US style='font-size:10.0pt'>Command</span></p>
+  </td>
+  <td width="58%" valign=bottom style='width:58.6%;border:none;border-bottom:
+  solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=Compact><span lang=EN-US style='font-size:10.0pt'>Action</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="41%" valign=top style='width:41.4%;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=Compact><span class=VerbatimChar><span lang=EN-US style='font-size:
+  9.0pt;background:lightgrey'>sudo passwd ubuntu</span></span></p>
+  </td>
+  <td width="58%" valign=top style='width:58.6%;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=Compact><span lang=EN-US style='font-size:10.0pt'>set a password for
+  user 'ubuntu'</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="41%" valign=top style='width:41.4%;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=Compact><span class=VerbatimChar><span lang=EN-US style='font-size:
+  9.0pt;background:lightgrey'>sudo chown ubuntu /mnt</span></span></p>
+  </td>
+  <td width="58%" valign=top style='width:58.6%;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=Compact><span lang=EN-US style='font-size:10.0pt'>make the ephemeral
+  disk writable</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="41%" valign=top style='width:41.4%;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=Compact><span class=VerbatimChar><span lang=EN-US style='font-size:
+  9.0pt;background:lightgrey'>lsblk</span></span></p>
+  </td>
+  <td width="58%" valign=top style='width:58.6%;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=Compact><span lang=EN-US style='font-size:10.0pt'>list the block
+  storage</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="41%" valign=top style='width:41.4%;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=Compact><span class=VerbatimChar><span lang=EN-US style='font-size:
+  9.0pt;background:lightgrey'>df -hT</span></span></p>
+  </td>
+  <td width="58%" valign=top style='width:58.6%;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=Compact><span lang=EN-US style='font-size:10.0pt'>display the disk
+  usage</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="41%" valign=top style='width:41.4%;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=Compact><span class=VerbatimChar><span lang=EN-US style='font-size:
+  9.0pt;background:lightgrey'>du -h &lt;path/to/directory&gt;</span></span></p>
+  </td>
+  <td width="58%" valign=top style='width:58.6%;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=Compact><span lang=EN-US style='font-size:10.0pt'>display directory
+  and file sizes</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="41%" valign=top style='width:41.4%;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=Compact><span class=VerbatimChar><span lang=EN-US style='font-size:
+  9.0pt;background:lightgrey'>top</span></span><span lang=EN-US
+  style='font-size:10.0pt'> or </span><span class=VerbatimChar><span
+  lang=EN-US style='font-size:9.0pt;background:lightgrey'>htop</span></span></p>
+  </td>
+  <td width="58%" valign=top style='width:58.6%;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=Compact><span lang=EN-US style='font-size:10.0pt'>activity monitor
+  for your VM</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="41%" valign=top style='width:41.4%;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=Compact><span class=VerbatimChar><span lang=EN-US style='font-size:
+  9.0pt;background:lightgrey'>ps</span></span></p>
+  </td>
+  <td width="58%" valign=top style='width:58.6%;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=Compact><span lang=EN-US style='font-size:10.0pt'>list the running
+  processes on your VM (with PID#)</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="41%" valign=top style='width:41.4%;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=Compact><span class=VerbatimChar><span lang=EN-US style='font-size:
+  9.0pt;background:lightgrey'>kill &lt;PID#&gt;</span></span></p>
+  </td>
+  <td width="58%" valign=top style='width:58.6%;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=Compact><span lang=EN-US style='font-size:10.0pt'>terminate the
+  process by PID number</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="41%" valign=top style='width:41.4%;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=Compact><span lang=EN-US style='font-size:10.0pt'>control + 'c'</span></p>
+  </td>
+  <td width="58%" valign=top style='width:58.6%;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=Compact><span lang=EN-US style='font-size:10.0pt'>stops a process
+  running in your terminal</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="41%" valign=top style='width:41.4%;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=Compact><span class=VerbatimChar><span lang=EN-US style='font-size:
+  9.0pt;background:lightgrey'>sudo apt-get update</span></span></p>
+  </td>
+  <td width="58%" valign=top style='width:58.6%;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=Compact><span lang=EN-US style='font-size:10.0pt'>updates the list
+  of packages available to install</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="41%" valign=top style='width:41.4%;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=Compact><span class=VerbatimChar><span lang=EN-US style='font-size:
+  9.0pt;background:lightgrey'>sudo apt-get upgrade</span></span></p>
+  </td>
+  <td width="58%" valign=top style='width:58.6%;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=Compact><span lang=EN-US style='font-size:10.0pt'>upgrades the
+  installed packages</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="41%" valign=top style='width:41.4%;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=Compact><span class=VerbatimChar><span lang=EN-US style='font-size:
+  9.0pt;background:lightgrey'>apt-cache search &lt;name&gt;</span></span></p>
+  </td>
+  <td width="58%" valign=top style='width:58.6%;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=Compact><span lang=EN-US style='font-size:10.0pt'>search for a package
+  to install</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="41%" valign=top style='width:41.4%;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=Compact><span class=VerbatimChar><span lang=EN-US style='font-size:
+  9.0pt;background:lightgrey'>sudo apt-get install &lt;name&gt;</span></span></p>
+  </td>
+  <td width="58%" valign=top style='width:58.6%;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=Compact><span lang=EN-US style='font-size:10.0pt'>install a package</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="41%" valign=top style='width:41.4%;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=Compact><span class=VerbatimChar><span lang=EN-US style='font-size:
+  9.0pt;background:lightgrey'>parallel &lt; commands.txt</span></span></p>
+  </td>
+  <td width="58%" valign=top style='width:58.6%;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=Compact><span lang=EN-US style='font-size:10.0pt'>distribute a list
+  of commands over multiple CPUs</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="41%" valign=top style='width:41.4%;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=Compact><span class=VerbatimChar><span lang=EN-US style='font-size:
+  9.0pt;background:lightgrey'>nohup &lt;normal commands go here&gt; 2&gt;&amp;1
+  &amp;</span></span></p>
+  </td>
+  <td width="58%" valign=top style='width:58.6%;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=Compact><span lang=EN-US style='font-size:10.0pt'>keep a job running
+  in the background</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.0pt'>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>
